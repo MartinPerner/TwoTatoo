@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau commentaire{% endblock %}
+
+{% block body %}
+<div class="container">
+        <h1>Nouveau commentaire</h1>
+    <div class="other-pages">
+
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+
+            <button class="btn">Poster</button>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}

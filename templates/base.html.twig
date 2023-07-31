@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+        <title>{% block title %}Accueil{% endblock %} - Twotatoo</title>
+        <link rel="icon" href="assets/img/logo.svg" type="image/svg">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="TwoTatoo - Artiste tatoueur, Marine vous accueil pour toutes vos envies de tatouage">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" defer></script>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcEv_2ifnn5H0fWlNW2DVNehOwliCSMso&callback=initMap"></script>
+
+
+
+
+        {% block stylesheets %}{% endblock %}
+
+        <link rel="stylesheet" href="{{ asset('assets/css/styles.css') }}">
+
+
+        <script src="{{ asset('assets/js/scripts.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+
     </head>
     <body>
-        {% block body %}{% endblock %}
+
+        {% include '_partials/_nav.html.twig' %}
+    
+        {% block body %}
+        {% endblock %}
+
+        {% include '_partials/_footer.html.twig' %}
+
+    
     </body>
 </html>

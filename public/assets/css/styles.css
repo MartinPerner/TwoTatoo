@@ -1,0 +1,421 @@
+* {
+    font-family: 'Dosis', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+flex: 1 0 auto;
+}
+
+h1 {
+    margin: 0;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+hr {
+    width: 80vw;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+ul {
+    font-size: 1.2em;
+}
+
+ul.custom-list li {
+    position: relative;
+    padding-left: 20px; 
+}
+
+ul.custom-list li::before {
+    content: "•"; 
+    position: absolute;
+    left: 0;
+    color: #000; 
+}
+
+/*******  NAV  ***********/
+
+nav {
+    height: 20vh;
+}
+
+    .nav-info {
+        display: flex;
+    }
+
+
+    nav p {
+        margin-right: 1vw;
+        font-size: 1.5em;
+    }
+
+    nav a {
+        background-color: black;
+    }
+
+    .brand-logo {
+        margin-left: 2vw;
+    }
+
+    .contact-link {
+        margin-right: 5vw;
+    }
+
+    #navbar {
+        transition: 0.4s;
+    }
+
+
+
+/*************** FOOTER  *****************/
+
+footer {
+    height: 20vh;
+    margin-top: auto;
+}
+
+
+
+
+/*************** HEADER  *****************/
+
+header {
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 50vh;
+    background-image: url('/assets/img/trucbleu.jpg');
+    background-size: cover; 
+    background-position: center 40%;
+    background-repeat: no-repeat;
+
+}
+
+    header h1 {
+        padding-bottom: 5vh;
+    }
+
+    header p {
+        opacity: 0.6;
+        max-width: 25vw;
+    }
+
+#boris {
+    text-align: right;
+}
+
+a:hover {
+    color: #FFEA11;
+}
+
+
+/********* PRESENTATION ***************/
+
+.presentation {
+    background-color: white;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 5vh 0 10vh 0;
+}
+
+    .presentation p {
+        max-width: 50vw;
+        padding-top: 10vh;
+    }
+
+
+/********* TATOO PICTURE ***************/    
+
+.section-tatoo-picture {
+    margin-top: 10vh;
+}
+
+.section-tatoo-picture h3 {
+        padding-bottom: 10vh;
+
+    }
+
+.tatoo-picture {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+    
+    .tatoo-picture img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 10px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin: 10px;
+    }
+    
+    .section-tatoo-picture h3 {
+        text-align: center;
+    }
+
+/********* CAROUSEL ***************/
+
+.back-carousel {
+    background-image: url('/assets/img/man.jpg');
+    background-size: cover; 
+    margin: 20vh 0 10vh 0;
+}
+
+.carousel {
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    padding: 10vh 0 10vh 0;
+    height: 80vh;
+    width: 60vw;
+}
+
+    .carousel-title {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;        
+    }
+
+    .carousel h3 {
+        text-align: center;
+    }
+    
+    .carousel-comment-content {
+        margin: 5vh 2vw 2vh 2vw;
+        /* width: 15vw; */
+    }
+
+    .carousel-user-name {
+        text-align: center;
+    } 
+
+    .carousel img {
+        height: 40px;
+        width: 40px;
+        background-color: white;
+        border-radius: 60%;
+    }
+
+
+/********* INFO ***************/
+
+.info {
+    margin: 1vh 0 10vh 0;
+}
+
+    .informations {
+        margin: 0 0 10vh 5vw;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .informations-title {
+        margin: 10vh 0 20vh 0;
+        text-align: center;
+    }
+
+    .informations h5 {
+        margin-bottom: 5vh;
+        /* text-align: center; */
+    }
+
+    .informations p {
+        max-width: 30vw;
+    }
+
+    .informations-perso, .informations-hygiene, .informations-message, .informations-price {
+        flex: 1 0 0; 
+    }
+
+
+    .vertical-separator {
+        height: 20vh;
+        border-left: 1px solid #000;
+        flex: 0.1; /*Cette ligne permet de s'assurer que le séparateur ne prend pas plus d'espace qu'il n'en faut*/
+        margin: 0 2vw; /* Ajoute une marge de chaque côté du séparateur */
+    }
+
+    .informations ul {
+        margin: 0 0 5vh 5vw;
+    }
+    
+
+/********* CONTACT ***************/
+
+
+    .contact h3 {
+        text-align: center;
+        margin-bottom: 20vh;
+    }
+
+    .contact-info {
+        display: flex;
+    }
+    
+    .contact-info-details {
+        margin: 5vh 0 0 5vw;
+    }
+    
+    .contact-info-details-social img {
+        height: 20px;
+        width: 20px;
+        margin-right: 0.5vw;
+    }
+    
+    .contact-info-details-social-twitter, .contact-info-details-social-instagram {
+        display: flex;
+        align-items: center;
+    }
+    
+    #map {
+        height: 40vh;
+        width: 60vw;
+    }
+
+
+/*********  REGISTER - PROFILE - EDIT-PROFILE - NEW COMMENT  ***********/
+
+.other-pages {
+    margin-top: 10vh;
+
+}
+
+.container h1 {
+    margin-top: 10vh;
+}
+
+
+
+
+
+
+/*********       RESPONSIVE       ********************************/
+
+@media screen and (max-width: 1000px) {
+
+
+    /**** NAV ****/ 
+
+    nav {
+        height: 15vh;
+    }
+
+    .nav-info {
+        display: flex;
+        flex-direction: column;
+        color: white;
+    }
+
+
+    /**** HEADER *****/
+
+    header p{
+        text-align: center;
+        max-width: none;
+    }
+
+    #boris {
+        margin-right: 5vw;
+    }
+
+    /**** PRESENTATION ****/
+
+    .presentation {
+        height: 90vh;
+        margin-bottom: 0;
+    }
+
+    .presentation p {
+        max-width: 80vw;
+        /* margin-bottom: 5vh; */
+    }
+
+
+    /**** CAROUSEL ****/
+
+    .back-carousel {
+        margin: 10vh 0 10vh 0;
+        display: flex;
+        justify-content: center;
+    }
+
+
+    .carousel h3 {
+        margin: 3vh 0 10vh 0;
+    }
+
+    .carousel-item {
+        margin-top: 7vh;
+    }
+
+
+    /**** INFO ****/
+
+    .info {
+        margin: 0 5vw 5vh 5vw;
+        padding: 0;
+    }
+
+    .informations {
+        flex-direction: column;
+        /* padding-top: 2vh; */
+    }
+
+    .informations p {
+        max-width: none;
+    }
+
+    .informations {
+        margin-top: 0;
+    }
+
+
+    /**** CONTACT ****/
+
+    .contact h3 {
+        margin-bottom: 5vh;
+    }
+
+    .contact-info {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-info-details {
+        margin-bottom: 5vh;
+    }
+
+    #map {
+        width: 100%;
+    }
+
+
+    /**** FOOTER ****/
+
+    footer {
+        height: 25vh;
+    }
+
+}

@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <header>
+        <div>
+            <h1>TWO TATOO </h1>
+            <p>"Les pirates ne paient pas d'impôts</p>
+            <p>Et s'font des tatouages sur les biscotos."</p>
+            <br>
+            <p id="boris">- Boris Vian</p>
+        </div>
+    </header>
+
+    <section class="presentation">
+        <h3>A propos de moi</h3>
+        <p>Bonjour à tous ! Je suis Marine, une passionnée d'art qui a trouvé son chemin dans l'incroyable monde du tatouage. J'ai fait le grand saut il y a quelques mois, abandonnant mon ancien métier pour me consacrer à cette passion qui brûle en moi. Chaque jour, j'explore de nouvelles techniques, de nouveaux styles, toujours dans l'optique de rendre vos projets de tatouages uniques et personnels. Je suis là pour vous, prête à accueillir toute âme désireuse de graver un fragment de leur histoire sur leur peau. Venez, laissez-moi vous guider à travers ce voyage fascinant et intime, et ensemble, nous créerons quelque chose de vraiment spécial.</p>
+    </section>
+
+    <hr>
+
+    <section class="section-tatoo-picture">
+        <h3>Mes derniers tatouages</h3>
+        <div class="tatoo-picture">
+            {% for picture in pictures %}
+                <img class="materialboxed" width="650" src="{{ asset('assets/img/' ~ picture.imageName) }}" alt="{{ picture.imageName }}">
+            {% else %}
+                <p>Pas d'images pour le moment.</p>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="back-carousel">
+        <div class="carousel">
+            <div class="carousel-title">
+                <img src="assets/img/guillemet-haut.png" alt="image">
+                <h3>Quelques retours de clients</h3>
+            </div>
+            <div class="carousel-comment">
+                {% for comment in comments %}
+                <div class="carousel-item">
+                    <div class="carousel-comment-content" style="font-size: 1em;">
+                        <p>{{ comment.content }}</p>
+                    </div>
+                    <div class="carousel-user-name">
+                        <p>- {{ comment.user.firstname }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+        
+    <section class="info">
+        <h3 class="informations-title">Informations pratiques</h3>
+        <div class="informations">
+            <div class="informations-perso">
+                <h5>Infos nécessaires pour toutes demandes par mail</h5>
+                <ul class="custom-list">
+                    <li>Votre nom, prénom et téléphone</li>
+                    <li>Thème, éléments du tatouage, couleur, taille</li>
+                    <li>Photos de la zone à tatouer (surtout si d'autres tatouages sont proches)</li>
+                </ul>
+                <p>Vous pouvez également joindre des images pour me faire une idée plus précise de votre projet</p>
+                <p>Merci d'adresser ces infomartions par un mail au blabla@blabla.com, je ferai un premier retour rapidement.</p>
+            </div>
+            <div class="vertical-separator"></div>
+            <div class="informations-hygiene">
+                <h5>Conseils et soins après avoir été tatoué</h5>
+                <ul class="custom-list">
+                    <li>Pas laver avant X</li>
+                    <li>Pas de soleil</li>
+                    <li>Pas de baignade</li>
+                </ul>
+                <p>N'hésitez pas à me poser des questions lors de notre (nos) rendez-vous.</p>
+
+            </div>
+        </div>
+        <div class="informations">
+            <div class="informations-message">
+                <h5>Laissez moi un message !</h5>
+                <p>Si votre scéance s'est bien passée avec moi, n'hésitez pas à me laisser un message via votre profil ! Il apparaitra dans le carousel de retour client. Vous pouvez accéder à profil sur le lien suivant ou en haut à droite du site.<br>
+                <a  href="{{ path('app_profile') }}">Mon profil</a></p>
+            </div>
+            <div class="vertical-separator"></div>
+            <div class="informations-price">
+                <h5>Tarif et temps</h5>
+                <p>Après réception de votre mail je peux vous donner une estimation de temps, et une fourchette de prix.</p>
+                <p>Je pourrais, à votre demande, vous proposer un RDV selon mes disponibilités et les vôtres, pour votre séance de tatouage.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <h3>Contactez-moi !</h3>
+        <div class="contact-info">
+            <div id="map"></div>    
+            <div class="contact-info-details">
+                <h5>Contact</h5>
+                <p>Marine Lecoss</p>
+                <p>marinelecoss@gmail.com</p>
+                <p>154 rue de l'église - Paris 15 - 75015</p>
+                <div class="contact-info-details-social">
+                    <div class="contact-info-details-social-twitter">
+                        <img src="assets/img/twitter.png" alt="image"><a href="#">@TwoTatoo</a>
+                    </div>
+                    <div class="contact-info-details-social-instagram">
+                        <img src="assets/img/instagram.png" alt="image"><a href="#">@TwoTatoo</a>         
+                    </div>
+                </div>       
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

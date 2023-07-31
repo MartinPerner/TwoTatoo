@@ -1,0 +1,65 @@
+{# <div class="nav-fixed"> #}
+    <nav class="nav-wrapper black">
+        <div id="navbar" class="container">
+            <a href="{{ path('app_main') }}" id="logo" class="brand-logo">TT</a>
+            <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                <i class="material-icons">menu</i>
+            </a>
+
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% if app.user %}
+                <div class="nav-info">
+                    {% if app.request.attributes.get('_route') == 'app_main' %}
+                        {# <a href="{{ path('contact') }}">Contact</a> #}
+                        <div class="contact-link">
+                            <a  href="#contact">Contact</a>
+                        </div>    
+                    {% endif %}
+                    <p>Bonjour {{ app.user.firstname }} !</p>
+                    <div class="nav-link">
+                        <li><a  href="{{ path('app_logout') }}">Déconnexion</a></li>
+                        <li><a  href="{{ path('app_profile') }}">Mon profil</a></li>
+                    </div>
+                </div>
+                {% else %}
+                <div class="nav-info">
+                    <div class="contact-link">
+                        <a  href="#contact">Contact</a>
+                    </div>
+                    <li><a  href="{{ path('app_login') }}">Connexion</a></li>
+                    <li><a  href="{{ path('app_register') }}">M'inscrire</a></li>
+                </div>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+    <ul id="mobile-links" class="sidenav black">
+        {% if app.user %}
+        <div class="nav-info">
+            {% if app.request.attributes.get('_route') == 'app_main' %}
+                {# <a href="{{ path('contact') }}">Contact</a> #}
+                <div class="contact-link">
+                    <a  href="#contact">Contact</a>
+                </div>    
+            {% endif %}   
+            <p >Bonjour {{ app.user.firstname }} !</p>
+            <div class="nav-link">
+                <li><a class="white" href="{{ path('app_logout') }}">Déconnexion</a></li>
+                <li><a class="white" href="{{ path('app_profile') }}">Mon profil</a></li>
+            </div>
+        </div>
+        {% else %}
+        <div class="nav-info">
+            {% if app.request.attributes.get('_route') == 'app_main' %}
+                {# <a href="{{ path('contact') }}">Contact</a> #}
+                <div class="contact-link">
+                    <a  href="#contact">Contact</a>
+                </div>    
+            {% endif %}
+            <li><a class="white" href="{{ path('app_login') }}">Connexion</a></li>
+            <li><a class="white" href="{{ path('app_register') }}">M'inscrire</a></li>
+        </div>
+        {% endif %}
+    </ul>
+{# </div> #}

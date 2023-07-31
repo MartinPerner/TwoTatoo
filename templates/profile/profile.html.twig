@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="mt-4">Information de ton profil</h1>
+        <div class="other-pages">
+            <p>Prénom: {{ app.user.firstname }}</p>
+            <p>Nom: {{ app.user.lastname }}</p>
+            <p>Email: {{ app.user.email }}</p>
+            <a href="{{ path('new_comment') }}" class="btn">Laisser un commentaire</a>
+            <a href="{{ path('app_edit', {id: app.user.id}) }}" class="btn">Editer vos informations de profil</a>
+        </div>
+    </div>
+
+{% endblock %}
