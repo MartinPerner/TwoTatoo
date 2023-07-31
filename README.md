@@ -1,2 +1,2 @@
 # TwoTatoo
-Projet de formation
+Projet de formation fait avec Symfony et MySQL
